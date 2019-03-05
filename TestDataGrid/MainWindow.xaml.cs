@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Windows;
 
@@ -16,7 +17,9 @@ namespace WpfTutorialSamples.DataGrid_control
             users.Add(new User() { Id = 3, Name = "Idris Jenkins", Birthday = new DateTime(2012, 9, 2) });
 
             dgSimple.ItemsSource = users;
+
         }
+
     }
 
     public class User
