@@ -1,28 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace TestDataGrid
+namespace WpfTutorialSamples.DataGrid_control
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public partial class SimpleDataGridSample : Window
     {
-        public MainWindow()
+        public SimpleDataGridSample()
         {
             InitializeComponent();
+
+            List<User> users = new List<User>();
+            users.Add(new User() { Id = 1, Name = "Hakim Jenkins", Birthday = new DateTime(1981, 5, 23) });
+            users.Add(new User() { Id = 2, Name = "Fahiem Jenkins", Birthday = new DateTime(2007, 1, 17) });
+            users.Add(new User() { Id = 3, Name = "Idris Jenkins", Birthday = new DateTime(2012, 9, 2) });
+
+            dgSimple.ItemsSource = users;
         }
+    }
+
+    public class User
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public DateTime Birthday { get; set; }
+
     }
 }
